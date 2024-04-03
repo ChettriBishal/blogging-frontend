@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SearchComponent } from './components/search/search.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { SearchComponent } from './search/search.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -10,7 +11,8 @@ import { SearchComponent } from './components/search/search.component';
   declarations: [
     NavbarComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule
