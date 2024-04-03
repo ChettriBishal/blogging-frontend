@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 
@@ -17,8 +17,8 @@ export class LoginComponent {
     this.authService.Login(this.username, this.password).subscribe(
         (response) =>{
           console.log(response.access_token);
-          localStorage.setItem('access_token', response.access_token);
-          localStorage.setItem('refresh_token',response.refresh_token);
+          sessionStorage.setItem('access_token', response.access_token);
+          sessionStorage.setItem('refresh_token',response.refresh_token);
           this.router.navigate(['']);
         },
         error => {

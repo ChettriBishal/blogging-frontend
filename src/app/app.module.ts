@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/auth.module';
+import { CoreModule } from './auth/auth.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { CoreModule } from './core/auth.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
