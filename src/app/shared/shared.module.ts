@@ -11,7 +11,9 @@ import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
-
+import { AboutComponent } from './about/about.component';
+import { SharedRouteModule } from './shared-routing.module';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -19,10 +21,13 @@ import { CardModule } from 'primeng/card';
     NavbarComponent,
     FooterComponent,
     SearchComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
+    SharedRouteModule,
     MenubarModule,
     MessagesModule,
     ToastModule,

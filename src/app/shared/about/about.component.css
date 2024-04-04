@@ -1,0 +1,48 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-us {
+  margin-bottom: 40px;
+}
+
+.about-us p {
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.about-text {
+  /* Style this paragraph to stand out, e.g., bolder font, wider margins */
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.team-member {
+  width: calc(33% - 20px); /* Adjust width for responsive design */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.team-member h3,
+.team-member p {
+  margin-bottom: 5px;
+}
+
+.team-member .bio {
+  font-style: italic;
+}

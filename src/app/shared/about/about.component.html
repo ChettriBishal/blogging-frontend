@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="about-us">
+    <h1>About Us</h1>
+    <p>Welcome to {{ websiteName }}! </p>
+    <p>
+
+        Welcome to {{websiteName}}, where vibrant minds converge to ignite inspiration and foster growth. Here, we believe that every voice carries the power to spark change and illuminate new perspectives.
+
+         We invite you to join a community where ideas flourish and connections thrive. Whether you're passionate about art, technology, literature, or any other realm of creativity, this is your platform to share, learn, and evolve together.
+    </p>
+  </div>
+
+  <h2>Meet the Team</h2>
+  <div class="team">
+    <div class="team-member" *ngFor="let member of team">
+      <img [src]="member.imageUrl" alt="{{ member.name }}">
+      <h3>{{ member.name }}</h3>
+      <p>{{ member.title }}</p>
+      <p class="bio">{{ member.bio }}</p>
+    </div>
+  </div>
+</div>
