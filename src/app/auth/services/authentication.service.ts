@@ -12,9 +12,16 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {}
 
   Login(username: string, password: string): Observable<any> {
+    /*Service to handle login */
     console.log('login request made');
     return this.http.post<any>(`${this.apiUrl}/login`, { username, password });
+  }
 
-    }
+  signUp(username: string, password: string, email: string): Observable<any> {
+    /*Service to enable user to signup */
+    console.log('signup request made');
+    return this.http.post<any>(`${this.apiUrl}/signup`, {username, password, email});
+  }
+  
 
 }

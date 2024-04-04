@@ -5,6 +5,9 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 
+import {MenubarModule} from 'primeng/menubar';
+import {MenuItem} from 'primeng/api';
+
 
 
 @NgModule({
@@ -15,7 +18,8 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MenubarModule
   ],
   exports: [NavbarComponent, FooterComponent, SearchComponent]
 })

@@ -1,0 +1,19 @@
+/* signup.component.css */
+
+.signup-form {
+  max-width: 300px;
+  margin: auto;
+}
+
+.p-field {
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+}
+
+.p-button-lg {
+  background-color: #007bff;
+  font-size: 1rem;
+}
