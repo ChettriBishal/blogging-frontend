@@ -45,11 +45,12 @@ h2 {
   padding: 10px;
 }
 
-.p-card-footer {
+.p-footer {
   text-align: right;
 }
 
-.p-card-footer a {
+.p-footer a {
+  font-size: 5px;
   text-decoration: none;
   color: #007bff;
 }

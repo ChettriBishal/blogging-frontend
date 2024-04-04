@@ -11,6 +11,7 @@ export class SignupComponent {
   username: string;
   password: string;
   email: string;
+  isValidEmail: boolean = true;
 
   constructor(private authService: AuthenticationService, private router: Router){}
 
@@ -22,6 +23,8 @@ export class SignupComponent {
   }
 
   signup(){
+    console.log('inside signup');
+    console.log(this.username);
     this.authService.signUp(this.username, this.password, this.email).subscribe(
         () =>{
           this.router.navigate(['Login']); // direct user to login page
@@ -31,4 +34,16 @@ export class SignupComponent {
         }
     );
   }
+
+  isValidEmailFn(email: string): boolean {
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    return emailRegex.test(email);
+  }
+
+  // Update isValidEmail property on email input change
+    onEmailChange(email: string) {
+    this.isValidEmail = this.isValidEmailFn(email);
+  }
+
+
 }

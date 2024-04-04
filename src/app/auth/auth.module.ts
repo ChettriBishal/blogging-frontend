@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
+import { CardModule } from 'primeng/card';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SignupComponent } from './signup/signup.component';
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CardModule
   ],
   exports:[
     LoginComponent
