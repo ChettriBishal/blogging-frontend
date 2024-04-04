@@ -19,15 +19,7 @@ export class BlogPostDetailComponent {
     const blogId = this.route.snapshot.paramMap.get('blog_id');
 
     console.log(blogId);
-    // console.log(this.route.snapshot);
-
-    // if (blogId) {
-    //   // Use the service to retrieve blog details based on id (optional)
-    //   this.blogService.blogs$.subscribe(blogs => {
-    //     this.selectedBlog = blogs.find(blog => blog.blog_id === parseInt(blogId));
-    //     console.log(`selected blog: ${this.selectedBlog}`);
-    //   });
-    // }
+    
     if (blogId) {
       // Use the service to retrieve blog details based on id
       console.log(`Blog Id ${blogId}`);
@@ -36,8 +28,6 @@ export class BlogPostDetailComponent {
         .subscribe(
           (blogPost) => (this.selectedBlog = blogPost),
         ); 
-      console.log(`selected blog: ${this.selectedBlog}`);
-
     }
   }
 

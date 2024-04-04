@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { BlogPostModule } from './blog-post/blog-post.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import { BlogPostModule } from './blog-post/blog-post.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     CoreModule,
     SharedModule,
     BlogPostModule
