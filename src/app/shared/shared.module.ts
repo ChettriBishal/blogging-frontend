@@ -7,8 +7,10 @@ import { HomeComponent } from './home/home.component';
 
 import {MenubarModule} from 'primeng/menubar';
 import { MessagesModule } from 'primeng/messages';
-import {MenuItem} from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 
 
 
@@ -23,7 +25,10 @@ import { ToastModule } from 'primeng/toast';
     CommonModule,
     MenubarModule,
     MessagesModule,
-    ToastModule
+    ToastModule,
+    InputTextModule,
+    ButtonModule,
+    CardModule,
   ],
   exports: [NavbarComponent, FooterComponent, SearchComponent]
 })
