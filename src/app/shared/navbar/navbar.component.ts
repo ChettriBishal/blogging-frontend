@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {MenubarModule} from 'primeng/menubar';
 import {MenuItem} from 'primeng/api';
+import { AuthenticationService } from '../../auth/services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,8 +11,19 @@ import {MenuItem} from 'primeng/api';
 })
 export class NavbarComponent {
   items: MenuItem[];
+  isLoggedIn: boolean = false;
+  authService = inject(AuthenticationService);
+  router = inject(Router);
+
 
   ngOnInit() {
+    this.authService.isLoggedIn$.subscribe(loggedIn => {
+      this.isLoggedIn = loggedIn;
+    });
+
+    this.isLoggedIn = this.authService.isUserLoggedIn(); // check if the jwt is active
+
+    console.log(this.isLoggedIn);
     this.items = [
       {
         label: 'Home',
@@ -29,5 +42,11 @@ export class NavbarComponent {
         routerLink: ['/contact']
       }
     ];
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+    this.isLoggedIn = false;
   }
 }

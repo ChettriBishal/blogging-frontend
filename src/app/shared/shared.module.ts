@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 
 import {MenubarModule} from 'primeng/menubar';
@@ -20,7 +19,6 @@ import { ContactComponent } from './contact/contact.component';
   declarations: [
     NavbarComponent,
     FooterComponent,
-    SearchComponent,
     HomeComponent,
     AboutComponent,
     ContactComponent
@@ -35,6 +33,6 @@ import { ContactComponent } from './contact/contact.component';
     ButtonModule,
     CardModule,
   ],
-  exports: [NavbarComponent, FooterComponent, SearchComponent]
+  exports: [NavbarComponent, FooterComponent]
 })
 export class SharedModule { }

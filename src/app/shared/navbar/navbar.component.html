@@ -12,7 +12,35 @@
     <li><a routerLink="/blogs">Blogs</a></li>
     <li><a routerLink="/about">About</a></li>
     <li><a routerLink="/contact">Contact</a></li>
-    <li><a routerLink="/login">Login</a></li>
-    <li><a routerLink="/signup">Signup</a></li>
+    <ng-container *ngIf="isLoggedIn">
+      <li>
+        <a>{{ authService.getCurrentUser()}}</a>
+        <button class="logout-btn" (click)="logout()">Logout</button>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="!isLoggedIn">
+      <li><a routerLink="/login">Login</a></li>
+      <li><a routerLink="/signup">Signup</a></li>
+    </ng-container>
   </ul>
 </div>
+
+
+<!-- <div class="navbar">
+  <div class="logo">
+    <a routerLink="/">Blogger</a>
+  </div>
+  <p-menubar [model]="items" styleClass="custom-menubar">
+    <ng-container *ngIf="isLoggedIn">
+      <p-menuItem label="{{ authService.getCurrentUser()?.username }}">
+        <button pButton type="button" label="Logout" icon="pi pi-sign-out" (click)="logout()"></button>
+      </p-menuItem>
+    </ng-container>
+    <ng-container *ngIf="!isLoggedIn">
+      <p-menuItem routerLink="/login" label="Login"></p-menuItem>
+      <p-menuItem routerLink="/signup" label="Signup"></p-menuItem>
+    </ng-container>
+  </p-menubar>
+</div> -->
+
+

@@ -1,21 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable,catchError } from 'rxjs';
-import { tap } from 'rxjs/operators'
-import { HttpErrorResponse } from '@angular/common/http';
+import { BehaviorSubject, Observable,catchError } from 'rxjs';
 import { LoginErrorResponse, LoginSuccessReponse } from '../auth-response.model';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
+  constructor(private http: HttpClient) {}
+
   private apiUrl = 'http://localhost:5000'; //  API endpoint for user authentication
 
-  constructor(private http: HttpClient) {}
+  private loggedInSubject = new BehaviorSubject<boolean>(false);
+  isLoggedIn$ = this.loggedInSubject.asObservable();
+
+  setLoggedIn(status: boolean) {
+    this.loggedInSubject.next(status);
+  }
+
+  isLoggedIn(): boolean {
+    return this.loggedInSubject.getValue(); // Access the current value directly
+  }
+
 
   login(username: string, password: string): Observable<any> {
     /*Service to handle login */
     console.log('login request made');
     return this.http.post<LoginErrorResponse | LoginSuccessReponse>(`${this.apiUrl}/login`, { username, password });
+  }
+
+  logout() {
+    /* remove the access_token upon logging out*/
+    sessionStorage.clear();
   }
 
   signUp(username: string, password: string, email: string): Observable<any> {
@@ -24,9 +39,13 @@ export class AuthenticationService {
     return this.http.post<any>(`${this.apiUrl}/signup`, {username, password, email});
   }
   
-  isLoggedIn(): boolean {
+  isUserLoggedIn(): boolean {
     /* To check if the user is logged in */
     return !!sessionStorage.getItem('access_token');
+  }
+
+  getCurrentUser(): string {
+    return 'hello';
   }
 
 }

@@ -22,9 +22,12 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe(
         (response) =>{
           console.log(response.access_token);
+
           sessionStorage.setItem('access_token', response.access_token);
           sessionStorage.setItem('refresh_token',response.refresh_token);
           this.messageService.add({ severity: 'success', summary: 'Login Successful!', detail: 'You are now logged in.' });
+
+          this.authService.setLoggedIn(true);
           this.router.navigate(['']); // navigate to the home screen
         },
         error => {
