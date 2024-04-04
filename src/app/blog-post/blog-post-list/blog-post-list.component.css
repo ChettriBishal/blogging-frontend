@@ -1,0 +1,55 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+/* Styles for the heading */
+h2 {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Roboto Mono", monospace;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.p-card {
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.p-card-footer {
+  text-align: right;
+}
+
+.p-card-footer a {
+  text-decoration: none;
+  color: #007bff;
+}

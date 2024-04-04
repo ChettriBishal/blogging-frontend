@@ -1,1 +1,3 @@
-<p>blog-post-detail works!</p>
+<h2>{{ selectedBlog?.title }}</h2>
+<p>By {{ selectedBlog?.creator_id }}</p>
+<div [innerHTML]="selectedBlog?.content"></div> 
