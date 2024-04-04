@@ -5,6 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { CardModule } from 'primeng/card';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { MessagesModule } from 'primeng/messages';
+import { AuthRouteModule } from './auth-routing.module';
 
 
 @NgModule({
@@ -16,10 +20,14 @@ import { CardModule } from 'primeng/card';
     CommonModule,
     FormsModule,
     HttpClientModule,
+    AuthRouteModule,
+    ToastModule,
+    MessagesModule,
     CardModule
   ],
   exports:[
     LoginComponent
-  ]
+  ],
+  providers: [ MessageService ]
 })
-export class CoreModule { }
+export class AuthModule { }

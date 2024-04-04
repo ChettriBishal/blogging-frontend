@@ -8,9 +8,10 @@ import { Panel, PanelModule } from 'primeng/panel';
 import { ImageModule } from 'primeng/image';
 import { TabViewModule } from 'primeng/tabview';
 
+import { EditorModule } from 'primeng/editor';
+
 import { BlogPostListComponent } from './blog-post-list/blog-post-list.component';
 import { BlogPostDetailComponent } from './blog-post-list/blog-post-detail/blog-post-detail.component';
-import { BlogPostFormComponent } from './blog-post-form/blog-post-form.component';
 import { BlogPostRoutingModule } from './blog-post-routing.module';
 
 
@@ -19,7 +20,6 @@ import { BlogPostRoutingModule } from './blog-post-routing.module';
   declarations: [
     BlogPostListComponent,
     BlogPostDetailComponent,
-    BlogPostFormComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +28,7 @@ import { BlogPostRoutingModule } from './blog-post-routing.module';
     PanelModule,
     ImageModule,
     TabViewModule,
+    EditorModule,
     BlogPostRoutingModule
   ]
 })

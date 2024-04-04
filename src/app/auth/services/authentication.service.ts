@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable,catchError } from 'rxjs';
 import { tap } from 'rxjs/operators'
 import { HttpErrorResponse } from '@angular/common/http';
+import { LoginErrorResponse, LoginSuccessReponse } from '../auth-response.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,10 +12,10 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) {}
 
-  Login(username: string, password: string): Observable<any> {
+  login(username: string, password: string): Observable<any> {
     /*Service to handle login */
     console.log('login request made');
-    return this.http.post<any>(`${this.apiUrl}/login`, { username, password });
+    return this.http.post<LoginErrorResponse | LoginSuccessReponse>(`${this.apiUrl}/login`, { username, password });
   }
 
   signUp(username: string, password: string, email: string): Observable<any> {
@@ -23,5 +24,9 @@ export class AuthenticationService {
     return this.http.post<any>(`${this.apiUrl}/signup`, {username, password, email});
   }
   
+  isLoggedIn(): boolean {
+    /* To check if the user is logged in */
+    return true;
+  }
 
 }

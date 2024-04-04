@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './auth/auth.module';
+import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { BlogPostModule } from './blog-post/blog-post.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CoreModule,
+    AuthModule,
     SharedModule,
     BlogPostModule
   ],

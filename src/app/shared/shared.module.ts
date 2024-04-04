@@ -6,7 +6,9 @@ import { SearchComponent } from './search/search.component';
 import { HomeComponent } from './home/home.component';
 
 import {MenubarModule} from 'primeng/menubar';
+import { MessagesModule } from 'primeng/messages';
 import {MenuItem} from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 
 
@@ -19,7 +21,9 @@ import {MenuItem} from 'primeng/api';
   ],
   imports: [
     CommonModule,
-    MenubarModule
+    MenubarModule,
+    MessagesModule,
+    ToastModule
   ],
   exports: [NavbarComponent, FooterComponent, SearchComponent]
 })
