@@ -14,6 +14,8 @@ import { BlogPostListComponent } from './blog-post-list/blog-post-list.component
 import { BlogPostDetailComponent } from './blog-post-list/blog-post-detail/blog-post-detail.component';
 import { BlogPostRoutingModule } from './blog-post-routing.module';
 import { BlogPostSpecificComponent } from './blog-post-specific/blog-post-specific.component';
+import { NewBlogComponent } from './new-blog/new-blog.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -22,10 +24,12 @@ import { BlogPostSpecificComponent } from './blog-post-specific/blog-post-specif
     BlogPostListComponent,
     BlogPostDetailComponent,
     BlogPostSpecificComponent,
+    NewBlogComponent,
   ],
   imports: [
     CommonModule,
     CardModule,
+    FormsModule,
     MessageModule,
     PanelModule,
     ImageModule,

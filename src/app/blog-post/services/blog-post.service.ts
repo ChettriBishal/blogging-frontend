@@ -1,54 +1,53 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject} from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { BlogPost } from '../blog-post.model';
+import { NgForm } from '@angular/forms';
+import { NewBlog } from '../new-blog/new-blog.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BlogPostService {
+  private apiUrl = 'http://localhost:5000';
 
-  private apiUrl = 'http://localhost:5000'; 
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-
-  /*GET methods here */
 
   getBlogPosts(): Observable<BlogPost[]> {
-    /* Get all blog posts */
     return this.http.get<BlogPost[]>(`${this.apiUrl}/blogs`);
   }
 
   getBlogPostsByUserId(user_id: number): Observable<BlogPost[]> {
-    /* Get blog posts by UserId */
     return this.http.get<BlogPost[]>(`${this.apiUrl}/users/${user_id}/blogs`);
   }
-  
+
   getBlogPost(id: number): Observable<BlogPost> {
-    /* Get a single blog post */
     const url = `${this.apiUrl}/blogs/${id}`;
     return this.http.get<BlogPost>(url);
   }
 
-   private blogsSubject = new BehaviorSubject<BlogPost[]>([]);
-   blogs$: Observable<BlogPost[]> = this.blogsSubject.asObservable();
+  private blogsSubject = new BehaviorSubject<BlogPost[]>([]);
+  blogs$: Observable<BlogPost[]> = this.blogsSubject.asObservable();
 
-    setBlogs(blogs: BlogPost[]) {
-        this.blogsSubject.next(blogs);
-    }
-  
+  setBlogs(blogs: BlogPost[]) {
+    this.blogsSubject.next(blogs);
+  }
+
   getBlogPlostsByUserId(userId: number): Observable<BlogPost[]> {
     const url = `/users/${userId}/blogs`;
     return this.http.get<BlogPost[]>(url);
   }
 
 
+  createBlog(blog: NewBlog) {
+    const headers = new HttpHeaders().set(
+      'Authorization',
+      `Bearer ${sessionStorage.getItem('access_token')}`
+    );
 
-  /*POST methods here */
-  
-  createBlog(blog: BlogPost){
-    // do something
+    return this.http.post<BlogPost>(`${this.apiUrl}/users/${blog.creator_id}/blogs`, blog, {
+      headers,
+    });
   }
-
 }
