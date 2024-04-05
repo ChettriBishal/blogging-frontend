@@ -10,4 +10,4 @@ const USER_ROUTES: Routes = [
   imports: [RouterModule.forChild(USER_ROUTES)],
   exports: [RouterModule],
 })
-export class AuthRouteModule {}
+export class UserRouteModule{}

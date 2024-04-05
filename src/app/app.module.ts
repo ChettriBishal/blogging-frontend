@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { BlogPostModule } from './blog-post/blog-post.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserModule } from './user/user.module';
 
 
 
@@ -20,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     AuthModule,
     SharedModule,
-    BlogPostModule
+    BlogPostModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
