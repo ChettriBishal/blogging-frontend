@@ -14,7 +14,7 @@
     <li><a routerLink="/contact">Contact</a></li>
     <ng-container *ngIf="isLoggedIn">
       <li>
-        <a>{{ authService.getCurrentUser()}}</a>
+        <a routerLink="/users/{{authService.getCurrentUser()}}">{{userName}}</a>
         <button class="logout-btn" (click)="logout()">Logout</button>
       </li>
     </ng-container>

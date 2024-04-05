@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable,catchError } from 'rxjs';
+import { jwtDecode} from 'jwt-decode';
+import { BehaviorSubject, Observable} from 'rxjs';
 import { LoginErrorResponse, LoginSuccessReponse } from '../auth-response.model';
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {}
 
   private apiUrl = 'http://localhost:5000'; //  API endpoint for user authentication
+
+
 
   private loggedInSubject = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this.loggedInSubject.asObservable();
@@ -21,6 +24,16 @@ export class AuthenticationService {
     return this.loggedInSubject.getValue(); // Access the current value directly
   }
 
+  private userNameSubject= new BehaviorSubject<string>('null');
+  userName$ = this.userNameSubject.asObservable();
+
+  setUserName(username: string) {
+    this.userNameSubject.next(username);
+  }
+
+  getUserName(): string {
+    return this.userNameSubject.getValue(); // Access the current value directly
+  }
 
   login(username: string, password: string): Observable<any> {
     /*Service to handle login */
@@ -44,8 +57,13 @@ export class AuthenticationService {
     return !!sessionStorage.getItem('access_token');
   }
 
-  getCurrentUser(): string {
-    return 'hello';
+  getCurrentUser(): number {
+    const token = localStorage.getItem('access_token');
+    if(token) {
+      const decodedToken = jwtDecode(token);
+      return +decodedToken.sub;
+    }
+    return 0;
   }
 
 }

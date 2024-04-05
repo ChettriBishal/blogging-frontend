@@ -28,6 +28,7 @@ export class LoginComponent {
           this.messageService.add({ severity: 'success', summary: 'Login Successful!', detail: 'You are now logged in.' });
 
           this.authService.setLoggedIn(true);
+          this.authService.setUserName(this.username);
           this.router.navigate(['']); // navigate to the home screen
         },
         error => {

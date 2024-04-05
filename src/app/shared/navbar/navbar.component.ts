@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   items: MenuItem[];
   isLoggedIn: boolean = false;
+  userName: string;
   authService = inject(AuthenticationService);
   router = inject(Router);
 
@@ -19,6 +20,10 @@ export class NavbarComponent {
   ngOnInit() {
     this.authService.isLoggedIn$.subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;
+    });
+
+    this.authService.userName$.subscribe(username => {
+      this.userName = username;
     });
 
     this.isLoggedIn = this.authService.isUserLoggedIn(); // check if the jwt is active

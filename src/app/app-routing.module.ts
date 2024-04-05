@@ -8,7 +8,7 @@ import { BlogPostListComponent } from './blog-post/blog-post-list/blog-post-list
 
 const routes: Routes = [
   {path: '',component: HomeComponent, pathMatch: 'full'},
-  {path: 'blogs', component: BlogPostListComponent, pathMatch: 'full'},
+  // {path: 'blogs', component: BlogPostListComponent, pathMatch: 'full'},
   {
     path: '', // for auth related (login and signup)
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
