@@ -36,24 +36,20 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string): Observable<any> {
-    /*Service to handle login */
     console.log('login request made');
     return this.http.post<LoginErrorResponse | LoginSuccessReponse>(`${this.apiUrl}/login`, { username, password });
   }
 
   logout() {
-    /* remove the access_token upon logging out*/
     sessionStorage.clear();
   }
 
   signUp(username: string, password: string, email: string): Observable<any> {
-    /*Service to enable user to signup */
     console.log('signup request made');
     return this.http.post<any>(`${this.apiUrl}/signup`, {username, password, email});
   }
   
   isUserLoggedIn(): boolean {
-    /* To check if the user is logged in */
     return !!sessionStorage.getItem('access_token');
   }
 
