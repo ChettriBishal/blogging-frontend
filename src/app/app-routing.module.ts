@@ -7,17 +7,16 @@ import { AuthModule } from './auth/auth.module';
 import { BlogPostListComponent } from './blog-post/blog-post-list/blog-post-list.component';
 
 const routes: Routes = [
-  {path: '',component: HomeComponent, pathMatch: 'full'},
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   // {path: 'blogs', component: BlogPostListComponent, pathMatch: 'full'},
   {
     path: '', // for auth related (login and signup)
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

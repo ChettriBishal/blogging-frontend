@@ -9,12 +9,8 @@ import { BlogPostModule } from './blog-post/blog-post.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserModule } from './user/user.module';
 
-
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -22,9 +18,9 @@ import { UserModule } from './user/user.module';
     AuthModule,
     SharedModule,
     BlogPostModule,
-    UserModule
+    UserModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
