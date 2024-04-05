@@ -12,9 +12,17 @@ export class BlogPostService {
 
   constructor(private http: HttpClient) { }
 
+
+  /*GET methods here */
+
   getBlogPosts(): Observable<BlogPost[]> {
     /* Get all blog posts */
     return this.http.get<BlogPost[]>(`${this.apiUrl}/blogs`);
+  }
+
+  getBlogPostsByUserId(user_id: number): Observable<BlogPost[]> {
+    /* Get blog posts by UserId */
+    return this.http.get<BlogPost[]>(`users/${this.apiUrl}/blogs`);
   }
   
   getBlogPost(id: number): Observable<BlogPost> {
@@ -29,6 +37,15 @@ export class BlogPostService {
     setBlogs(blogs: BlogPost[]) {
         this.blogsSubject.next(blogs);
     }
+  
+  getBlogPlostsByUserId(userId: number): Observable<BlogPost[]> {
+    const url = `/users/${userId}/blogs`;
+    return this.http.get<BlogPost[]>(url);
+  }
+
+
+
+  /*POST methods here */
   
   createBlog(blog: BlogPost){
     // do something

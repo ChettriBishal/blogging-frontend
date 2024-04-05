@@ -13,6 +13,7 @@ import { EditorModule } from 'primeng/editor';
 import { BlogPostListComponent } from './blog-post-list/blog-post-list.component';
 import { BlogPostDetailComponent } from './blog-post-list/blog-post-detail/blog-post-detail.component';
 import { BlogPostRoutingModule } from './blog-post-routing.module';
+import { BlogPostSpecificComponent } from './blog-post-specific/blog-post-specific.component';
 
 
 
@@ -20,6 +21,7 @@ import { BlogPostRoutingModule } from './blog-post-routing.module';
   declarations: [
     BlogPostListComponent,
     BlogPostDetailComponent,
+    BlogPostSpecificComponent,
   ],
   imports: [
     CommonModule,

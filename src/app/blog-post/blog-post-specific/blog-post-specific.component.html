@@ -1,0 +1,16 @@
+<h2>Posts </h2>
+<div class="card-container">
+  <p-card *ngFor="let blog of blogs" [style.width]="cardWidth" (click)="openBlogDetail(blog)">
+    <div class="card-header">
+      <h2>{{ blog.title }}</h2>
+      <p>{{ blog.creator_id }}</p>
+    </div>
+    <img class="card-image" [src]="'https://apollo.primeng.org/assets/demo/images/blog/blogdetail.png'" alt="{{ blog.title }} image" />
+    <div class="card-content">
+      <p>{{ blog.content }}</p>
+    </div>
+    <p-footer>
+      <a routerLink="/blogs/{{blog.blog_id}}">Read More</a>
+    </p-footer>
+  </p-card>
+</div>

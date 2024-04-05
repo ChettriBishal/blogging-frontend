@@ -13,6 +13,7 @@ import { CardModule } from 'primeng/card';
 import { AboutComponent } from './about/about.component';
 import { SharedRouteModule } from './shared-routing.module';
 import { ContactComponent } from './contact/contact.component';
+import { ChildNavbarComponent } from './navbar/child-navbar/child-navbar.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ContactComponent } from './contact/contact.component';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ChildNavbarComponent
   ],
   imports: [
     CommonModule,

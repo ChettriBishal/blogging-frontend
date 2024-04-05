@@ -24,7 +24,13 @@
     </ng-container>
   </ul>
 </div>
+<app-child-navbar 
+  *ngIf="isLoggedIn" 
+  [isLoggedIn]="isLoggedIn"
+  [currentUserName]="userName"
+  >
 
+</app-child-navbar>
 
 <!-- <div class="navbar">
   <div class="logo">

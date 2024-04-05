@@ -16,6 +16,10 @@ h2 {
   margin: 20px;
 }
 
+p-card:hover {
+  cursor: pointer;
+}
+
 .p-card {
   margin: 10px;
   border: 1px solid #ddd;

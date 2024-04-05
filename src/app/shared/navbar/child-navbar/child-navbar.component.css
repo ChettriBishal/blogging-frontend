@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  justify-content: left; /* Center navbar horizontally */
+  align-items: right; /* Align content vertically */
+  background-color: #f2f2f2; /* Light gray background */
+  padding: 1rem 0; /* Top and bottom padding */
+  border-bottom: 1px solid #ddd; /* Thin border at the bottom */
+}
+
+ul {
+  list-style: none; /* Remove default list style */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+li {
+  display: inline-block; /* Display list items inline */
+  margin-left: 1rem; /* Space between list items */
+}
+
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Text color */
+  font-weight: 500; /* Font weight for a slightly bolder look */
+}
+
+a:hover {
+  color: #666; /* Change color on hover */
+}
