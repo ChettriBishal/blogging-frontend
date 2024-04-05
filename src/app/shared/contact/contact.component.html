@@ -1,0 +1,22 @@
+<p-toast></p-toast>
+<div class="contact-container">
+  <div class="image-container">
+    <img src="https://images.unsplash.com/photo-1712146545492-3a4435277ed2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Contact Us Image" class="contact-image">
+  </div>
+  <div class="contact-list-container">
+    <h2>Contact Us</h2>
+    <p>Get in touch with our team.</p>
+    <div class="contact-list">
+      <p-card *ngFor="let contact of contacts" [style]="{width: '100%'}">
+        <img [src]="contact.imageUrl" alt="{{ contact.name }}" class="contact-list-image">
+        <div class="card-content">
+          <h3>{{ contact.name }}</h3>
+          <p>{{ contact.title }}</p>
+          <p>{{ contact.email }}</p>
+          <p-button label="Email" (click)="sendEmail(contact.email)" icon="pi pi-envelope" iconPos="right" class="email-button"></p-button>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</div>
+

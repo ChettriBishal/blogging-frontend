@@ -1,0 +1,24 @@
+<div class="container-fluid login-container">
+    <p-toast position="top-right"></p-toast>
+    
+    <div class="row">
+        <div class="login-form col-md-6">
+            <h2>Login</h2>
+            <form (ngSubmit)="login()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="username" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="login-image">
+            </div>
+        </div>
+    </div>
+</div>

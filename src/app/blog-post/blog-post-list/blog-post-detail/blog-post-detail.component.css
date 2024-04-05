@@ -1,0 +1,66 @@
+.blog-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional subtle shadow */
+}
+
+.blog-detail-header {
+  display: flex; /* Make header a flexbox container */
+  justify-content: space-between; /* Align items horizontally */
+  align-items: center; /* Align items vertically */
+  margin-bottom: 1rem;
+}
+
+.blog-detail-title {
+  margin: 0;
+  font-size: 2rem; /* Adjust title size as needed */
+  color: #333; /* Darker text for title */
+}
+
+.blog-detail-author {
+  color: #888; /* Lighter text for author */
+}
+
+.blog-detail-image {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.blog-detail-content-body {
+  padding: 1rem;
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+.error-message {
+  margin-top: 2rem;
+}
+
+.blog-detail-excerpt {
+  background-color: #f0f0f0; /* Lighter background for excerpt */
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ddd; /* Optional border for excerpt */
+}
+
+.blog-detail-content-body {
+  /* Consider adding subtle text shadow for readability on light backgrounds */
+}
+
+/* Optional PrimeNG TabView styling */
+.p-tabview .p-tabview-nav {
+  border-bottom: none; /* Remove default bottom border */
+}
+
+.p-tabview .p-tabview-header {
+  background-color: #eee; /* Light background for tabs */
+}
+
+.p-tabview .p-tabview-active .p-tabview-tab {
+  background-color: #ddd; /* Slightly darker background for active tab */
+  font-weight: bold; /* Bold text for active tab */
+}

@@ -1,0 +1,43 @@
+.contact-container {
+  display: flex;
+  width: 100%; /* Ensure full width */
+}
+
+.image-container {
+  flex: 1; /* Allocate half the width for the image */
+  overflow: hidden; /* Prevent image overflow */
+}
+
+.contact-image {
+  width: 100%; /* Image fills the container */
+  height: auto; /* Maintain image aspect ratio */
+}
+
+.contact-list-container {
+  flex: 1; /* Allocate half the width for the contact list */
+  padding: 20px; /* Add padding for spacing */
+}
+
+.contact-list {
+  display: flex; /* Arrange contacts horizontally */
+  flex-wrap: wrap; /* Allow contacts to wrap on smaller screens */
+  justify-content: space-between; /* Distribute contacts evenly */
+}
+
+.contact-list-card {
+  /* Inherited styles from p-card can be adjusted here */
+  margin: 10px; /* Add spacing between cards */
+}
+
+.contact-list-image {
+  width: 75px; /* Smaller image size for contact list */
+  height: 75px;
+  border-radius: 50%; /* Maintain round shape */
+  object-fit: cover; /* Resize image to fit container */
+  margin-bottom: 10px; /* Spacing between image and content */
+}
+
+.email-button {
+  background-color: #3f51b5; /* Adjust color as needed */
+  color: white;
+}

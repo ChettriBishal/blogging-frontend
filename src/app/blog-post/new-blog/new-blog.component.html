@@ -1,0 +1,40 @@
+<div class="new-blog-container">
+  <h2>Create New Blog Post</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="newBlog.title"
+        name="title"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="content">Content:</label>
+      <textarea
+        class="form-control"
+        id="content"
+        [(ngModel)]="newBlog.content"
+        name="content"
+        required
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="tagname">Tag Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="tagname"
+        [(ngModel)]="newBlog.tagname"
+        name="tagname"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="submitted">
+      Create Blog
+    </button>
+  </form>
+</div>

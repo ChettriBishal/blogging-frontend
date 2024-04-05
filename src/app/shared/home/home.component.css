@@ -1,0 +1,58 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero p {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+
+.hero-image {
+  width: 100%;
+  height: 300px; /* Adjust height as needed */
+  object-fit: cover; /* Ensures image fills container */
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-bar p-inputText {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.featured-blogs {
+  margin-bottom: 20px;
+}
+
+.featured-blogs h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+p-card {
+  margin-bottom: 10px;
+}

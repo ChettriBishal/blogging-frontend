@@ -1,0 +1,49 @@
+.user-profile {
+  display: flex;
+  width: 100%; /* Adjust width as needed */
+  align-items: center;
+}
+
+.profile-image {
+  width: 45%; /* Adjust image width as needed */
+  height: auto;
+  object-fit: cover; /* Maintain aspect ratio and crop if needed */
+  border-radius: 10px;
+}
+
+.user-info {
+  width: 50%; /* Adjust card width as needed */
+  padding: 1rem;
+}
+.user-info > img {
+    height: 200px;
+    align-items: center;
+    display: flex;
+}
+
+.user-card {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+.user-card:hover {
+  transform: translateY(-5px);
+}
+
+.user-card h2 {
+  color: #333333;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.user-card p {
+  color: #666666;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.user-card .pi {
+  margin-right: 5px;
+}
+

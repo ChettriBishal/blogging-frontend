@@ -1,0 +1,14 @@
+
+
+
+<div class="user-profile">
+  <img class="profile-image" [src]="'https://images.unsplash.com/photo-1711861982569-565113102217?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'" alt="User Background">
+  <div class="user-info">
+    <img src="../../../assets/people.jpg">
+    <p-card [styleClass]="'user-card'">
+      <h2>{{ currentUser.username }}</h2>
+      <p><i class="pi pi-envelope"></i> {{ currentUser.email }}</p>
+      <p><i class="pi pi-calendar"></i> Joined: {{ currentUser.registration_date | date:'mediumDate' }}</p>
+    </p-card>
+  </div>
+</div>
