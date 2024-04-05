@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CardModule } from 'primeng/card';
 import { UserRouteModule } from './user-routing.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
@@ -12,7 +13,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
   ],
   imports: [
     CommonModule,
-    UserRouteModule
+    UserRouteModule,
+    CardModule
   ],
   exports:[
   ]

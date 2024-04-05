@@ -6,7 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 
 const SHARED_ROUTES: Routes = [
   { path: 'about', component: AboutComponent},
-  { path: 'contact', component: ContactComponent}
+  { path: 'contact', component: ContactComponent},
 ];
 @NgModule({
   imports: [RouterModule.forChild(SHARED_ROUTES)],

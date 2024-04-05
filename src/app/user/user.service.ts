@@ -8,17 +8,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserService {
 
-  private apiUrl = 'http://localhost:5000/users'; // Replace with your actual API endpoint
+  private apiUrl = 'http://localhost:5000/personal'; // Replace with your actual API endpoint
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) { }
 
   getCurrentUser(): Observable<any> {
     // console.log(this.activatedRoute.snapshot.paramMap);
-    const userId = this.activatedRoute.snapshot.paramMap.get('user_id');
-    // const headers = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('access_token')}`); // Assuming access_token is stored in sessionStorage
 
-    console.log(userId);
-    return this.http.get<any>(this.apiUrl + userId);
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('access_token')}`); // Assuming access_token is stored in sessionStorage
+
+    return this.http.get<any>(this.apiUrl, {headers});
   }
 
 }
