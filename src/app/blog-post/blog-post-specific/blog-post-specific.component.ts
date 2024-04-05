@@ -21,15 +21,18 @@ export class BlogPostSpecificComponent {
 
   ngOnInit() {
     this.getPostsByUser(this.authService.getCurrentUser());
-    this.blogPostService.getBlogPosts().subscribe(
-      blogs => this.blogPostService.setBlogs(blogs)
-    );
+    this.blogPostService.getBlogPostsByUserId(this.authService.getCurrentUser()).subscribe(
+      blogs => {this.blogPostService.setBlogs(blogs)
+        this.blogs = blogs;
+  });
     
   }
 
   getPostsByUser(user_id: number): void {
     this.blogPostService.getBlogPlostsByUserId(user_id)
-      .subscribe(posts => this.blogs = posts);
+      .subscribe(posts => {
+        this.blogs = posts
+      });
   }
 
    openBlogDetail(blog: BlogPost) {

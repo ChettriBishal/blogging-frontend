@@ -22,7 +22,7 @@ export class BlogPostService {
 
   getBlogPostsByUserId(user_id: number): Observable<BlogPost[]> {
     /* Get blog posts by UserId */
-    return this.http.get<BlogPost[]>(`users/${this.apiUrl}/blogs`);
+    return this.http.get<BlogPost[]>(`${this.apiUrl}/users/${user_id}/blogs`);
   }
   
   getBlogPost(id: number): Observable<BlogPost> {
