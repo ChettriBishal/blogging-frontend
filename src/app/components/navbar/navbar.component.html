@@ -1,2 +1,39 @@
 <p>navbar works!</p>
-<p-menubar [model]="items"></p-menubar>
+<!-- <p-menubar [model]="items"></p-menubar> -->
+<p-menubar class="p-mb-4">
+    <p-menuitem [routerLink]="['/']">My Blog</p-menuitem>
+    <ng-container *ngIf="appUser$ | async as appUser; else anonymousUser">
+        <p-menuitem
+            [routerLinkActive]="['link-active']"
+            [routerLink]="['/addpost']"
+        >
+            Add Post
+        </p-menuitem>
+        <span class="spacer"></span>
+        <ng-container>
+            <div>
+                <!-- <img
+                    p-avatar
+                    class="user-avatar"
+                    src="{{ appUser.photoURL }}"
+                /> -->
+            </div>
+            <button type="button" pButton icon="pi pi-user" label="{{ appUser.name | titlecase }}" [dropdown]="userMenu"></button>
+            <p-dropdown #userMenu [style]="{ width: '150px' }">
+                <p-menuitem (click)="logout()">Logout</p-menuitem>
+            </p-dropdown>
+        </ng-container>
+    </ng-container>
+    <ng-template #anonymousUser>
+        <span class="spacer"></span>
+        <p-button label="Login with Google" (click)="login()"></p-button>
+    </ng-template>
+    <div class="me-2">
+        <p-button>
+            <a
+                href="https://github.com/"
+                target="_blank"
+            ><fa-icon class="github-icon" [icon]="githubIcon"></fa-icon> Source Code</a>
+        </p-button>
+    </div>
+</p-menubar>

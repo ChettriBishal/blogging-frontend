@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {MenuItem} from 'primeng/api';
+import { AuthService } from '../../services/auth/auth.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +10,18 @@ import {MenuItem} from 'primeng/api';
 })
 export class NavbarComponent {
   items: MenuItem[];
+  isLoggedIn$: BehaviorSubject<boolean>;
+
+  constructor(private authService: AuthService) {
+    this.isLoggedIn$ = this.authService.isLoggedIn$;
+  }
 
     ngOnInit() {
+        this.isLoggedIn$.subscribe(isLoggedIn => {
+            this.isLoggedIn$ = isLoggedIn;
+            this.items = this.createMenuItems();
+        });
+
         this.items = [
             {
                 label: 'File',
