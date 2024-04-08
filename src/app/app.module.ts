@@ -1,16 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { PrimeNgModule } from './primeng/primeng.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BlogComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    PrimeNgModule
   ],
   providers: [],
   bootstrap: [AppComponent]
