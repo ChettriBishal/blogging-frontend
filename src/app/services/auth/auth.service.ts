@@ -10,15 +10,17 @@ import { LoginErrorResponse, LoginSuccessReponse } from "../../models/auth-respo
     providedIn: 'root',
 })
 export class AuthService {
+    apiUrl: string = 'http://localhost:5000';
+
     constructor(private http: HttpClient){
 
     }
 
-    isLoggedIn$ = new BehaviorSubject<boolean>(false);
+    isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     login(username: string, password: string): Observable<any> {
         this.isLoggedIn$.next(true);
-        return this.http.post<LoginErrorResponse | LoginSuccessReponse>(`${environment.apiUrl}/login`, { username, password });
+        return this.http.post<LoginErrorResponse | LoginSuccessReponse>(`${this.apiUrl}/login`, { username, password });
     }
 
     logout() {
@@ -28,7 +30,7 @@ export class AuthService {
 
 
     signUp(username: string, password: string, email: string): Observable<any> {
-        return this.http.post<any>(`${environment.apiUrl}/signup`, {username, password, email});
+        return this.http.post<any>(`${this.apiUrl}/signup`, {username, password, email});
     }
 
 
