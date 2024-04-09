@@ -6,6 +6,12 @@ import {ButtonModule} from 'primeng/button';
 import {MenubarModule} from 'primeng/menubar';
 import {DropdownModule} from 'primeng/dropdown';
 import { MenuModule } from 'primeng/menu';
+import { CardModule } from 'primeng/card';
+import { DividerModule } from 'primeng/divider';
+import { SpinnerModule } from 'primeng/spinner';
+import {ToastModule} from 'primeng/toast';
+import {InputTextModule} from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
 
 
 const importedPrimeNgModules = [
@@ -13,6 +19,12 @@ const importedPrimeNgModules = [
     ButtonModule,
     DropdownModule,
     MenuModule,
+    CardModule,
+    DividerModule,
+    SpinnerModule,
+    ToastModule,
+    InputTextModule,
+    PasswordModule
 ];
 
 @NgModule({

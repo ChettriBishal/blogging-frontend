@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+
+  .card-shadow {
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+
+  @keyframes lift {
+    from {
+      transform: translateY(100px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }
