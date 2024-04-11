@@ -1,0 +1,23 @@
+<p-toast position="top-right"></p-toast>
+<p class="signup-title">Sign Up</p>
+<form (ngSubmit)="signup()" #signupForm="ngForm">
+  <div class="p-field">
+    <label for="username">Username</label>
+    <span class="p-float-label">
+      <input pInputText type="text" id="username" name="username" [(ngModel)]="username" required />
+    </span>
+  </div>
+  <div class="p-field">
+    <label for="email">Email</label>
+    <span class="p-float-label">
+      <input pInputText type="email" id="email" name="email" [(ngModel)]="email" required />
+    </span>
+  </div>
+  <div class="p-field">
+    <label for="password">Password</label>
+    <span class="p-float-label">
+      <p-password type="password" id="password" name="password" [(ngModel)]="password" required></p-password>
+    </span>
+  </div><br/>
+  <button type="submit" pButton label="Sign Up" class="p-button-rounded p-button-primary"></button>
+</form>

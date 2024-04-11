@@ -1,22 +1,43 @@
 <div class="container">
-  <p-card [style]="{ 'animation': 'lift 1s ease-in-out' }" class="card-shadow">
+  <p-card [style]="{ animation: 'lift 1s ease-in-out' }" class="card-shadow">
     <p-toast position="top-right"></p-toast>
     <p class="login-title">Welcome Back!</p>
     <form (ngSubmit)="login()" #loginForm="ngForm">
       <div class="p-field">
         <label for="username">Username</label>
         <span class="p-float-label">
-          <input pInputText type="text" id="username" name="username" [(ngModel)]="username" required />
+          <input
+            pInputText
+            type="text"
+            id="username"
+            name="username"
+            [(ngModel)]="username"
+            required
+          />
         </span>
       </div>
       <div class="p-field">
         <label for="password">Password</label>
         <span class="p-float-label">
-          <p-password type="password" id="password" name="password" [(ngModel)]="password" required></p-password>
+          <p-password
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            required
+          ></p-password>
         </span>
-      </div><br>
-      <button type="submit" pButton label="Login" class="p-button-rounded p-button-primary"></button>
+      </div>
+      <br />
+      <button
+        type="submit"
+        pButton
+        label="Login"
+        class="p-button-rounded p-button-primary"
+      ></button>
     </form>
-    <p class="signup-text">Not registered yet? <a routerLink="/signup">Sign Up Here</a></p>
+    <p class="signup-text">
+      Not registered yet? <a routerLink="/signup">Sign Up Here</a>
+    </p>
   </p-card>
 </div>

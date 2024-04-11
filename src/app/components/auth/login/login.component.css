@@ -1,24 +1,26 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    margin: 0 auto;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.login-title {
+    font-weight: bold;
+}
 
+.card-shadow {
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
 
-  .card-shadow {
-    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+@keyframes lift {
+  from {
+    transform: translateY(100px);
   }
-
-  @keyframes lift {
-    from {
-      transform: translateY(100px);
-    }
-    to {
-      transform: translateY(0px);
-    }
+  to {
+    transform: translateY(0px);
   }
+}

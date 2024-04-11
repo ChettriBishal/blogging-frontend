@@ -3,6 +3,7 @@ import { MenuItem } from 'primeng/api';
 import { AuthService } from '../../services/auth/auth.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -23,7 +24,7 @@ export class NavbarComponent {
   }
 
   redirectToLogin(): void {
-    this.router.navigate(['/auth/login']);
+    this.router.navigate(['/login']);
   }
 
   ngOnInit() {
@@ -33,44 +34,18 @@ export class NavbarComponent {
     });
 
     this.items = [
-      {
-        label: 'File',
-        items: [
-          {
-            label: 'New',
-            icon: 'pi pi-fw pi-plus',
-            items: [{ label: 'Project' }, { label: 'Other' }],
-          },
-          { label: 'Open' },
-          { label: 'Quit' },
-        ],
-      },
-      {
-        label: 'Edit',
-        icon: 'pi pi-fw pi-pencil',
-        items: [
-          { label: 'Delete', icon: 'pi pi-fw pi-trash' },
-          { label: 'Refresh', icon: 'pi pi-fw pi-refresh' },
-        ],
-      },
+      // {
+      //   label: 'Blogger',
+      // },
     ];
   }
 
   createMenuItems(): MenuItem[] {
-    const usualStuff = [
-        {
-            label: 'Blogger'
-        },
-    ]
-    const logoutButton = this.isLoggedIn
-      ? ({ label: 'Logout' })
-      : ({ label: 'Login' });
+    const postButton: MenuItem = {
+      label: 'Post',
+      routerLink: '/post', // Link to the post page
+    };
 
-    const postButton = this.isLoggedIn ? ({ label: 'Post' }) : null;
-
-    return [usualStuff, logoutButton, postButton];
+    return this.isLoggedIn ? [postButton] : []; // Show button only if logged in
   }
-
-   
 }
-

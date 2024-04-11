@@ -10,9 +10,11 @@ import { BlogComponent } from './components/blog/blog.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PrimeNgModule } from './primeng/primeng.module';
+import { AuthModule } from './components/auth/auth.module';
 import { PostCommentComponent } from './components/post-comment/post-comment.component';
 import { CommentListComponent } from './components/comment-list/comment-list.component';
 import { LoginComponent } from './components/auth/login/login.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { LoginComponent } from './components/auth/login/login.component';
     NavbarComponent,
     PostCommentComponent,
     CommentListComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { LoginComponent } from './components/auth/login/login.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    PrimeNgModule
+    PrimeNgModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
