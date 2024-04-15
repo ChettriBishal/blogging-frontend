@@ -24,6 +24,7 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe(
       (response) => {
         console.log(response.access_token);
+        this.authService.isLoggedIn$.next(true);
 
         sessionStorage.setItem('access_token', response.access_token);
         sessionStorage.setItem('refresh_token', response.refresh_token);
@@ -35,15 +36,11 @@ export class LoginComponent {
 
         // this.authService.setLoggedIn(true);
         // this.authService.setUserName(this.username);
-        this.router.navigate(['']); // navigate to the home screen
+        this.router.navigate(['']);
       },
       (error) => {
-        console.log('here');
-        // display a toast that wrong password
-        console.log('here');
         console.log(error.status);
         if (error.status === 401) {
-          // Check for specific error code (e.g., 401 for Unauthorized)
           this.messageService.add({
             severity: 'error',
             summary: 'Login Failed',

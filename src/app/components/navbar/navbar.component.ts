@@ -43,9 +43,9 @@ export class NavbarComponent {
   createMenuItems(): MenuItem[] {
     const postButton: MenuItem = {
       label: 'Post',
-      routerLink: '/post', // Link to the post page
+      routerLink: '/post', 
     };
 
-    return this.isLoggedIn ? [postButton] : []; // Show button only if logged in
+    return this.isLoggedIn ? [postButton] : []; 
   }
 }

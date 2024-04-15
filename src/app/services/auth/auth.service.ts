@@ -19,7 +19,6 @@ export class AuthService {
     isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     login(username: string, password: string): Observable<any> {
-        this.isLoggedIn$.next(true);
         return this.http.post<LoginErrorResponse | LoginSuccessReponse>(`${this.apiUrl}/login`, { username, password });
     }
 

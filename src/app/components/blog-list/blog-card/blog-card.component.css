@@ -1,0 +1,12 @@
+.blog-card {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.p-card-header {
+  font-weight: bold;
+}
+
+.author, .date {
+  font-style: italic;
+}
