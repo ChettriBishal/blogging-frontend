@@ -1,12 +1,11 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 /* Styles for the heading */
 h2 {
-    text-align: center;
-    margin: 10px 0;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: "Roboto Mono", monospace;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
 }
 
 .card-container {
@@ -26,7 +25,6 @@ p-card:hover {
   border-radius: 4px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
-
 
 .card-header {
   padding: 10px;

@@ -1,0 +1,16 @@
+
+
+<div class="blog-detail-container" *ngIf="selectedBlog">
+  <div class="blog-detail-header">
+    <h1 class="blog-detail-title">{{ selectedBlog.title }}</h1>
+    <p class="blog-detail-author">By {{ selectedBlog.creator_id}}</p>
+  </div>
+
+  <div class="blog-detail-image">
+    <p-image [src]="'https://apollo.primeng.org/assets/demo/images/blog/blogdetail.png'" alt="{{ selectedBlog?.title }}" width="100%"></p-image>
+  </div>
+
+  <div class="blog-detail-content">
+    <div [innerHTML]="selectedBlog?.content"></div>
+  </div>
+</div>

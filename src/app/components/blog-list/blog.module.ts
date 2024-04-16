@@ -4,6 +4,8 @@ import { BlogCardComponent } from './blog-card/blog-card.component';
 import { BlogListComponent } from './blog-list.component';
 import { BlogRoutingModule } from './blog-routing.module';
 import { CardModule } from 'primeng/card';
+import { ImageModule } from 'primeng/image';
+import { BlogComponent } from './blog/blog.component';
 
 
 
@@ -12,11 +14,13 @@ import { CardModule } from 'primeng/card';
   declarations: [
     BlogCardComponent,
     BlogListComponent,
+    BlogComponent,
   ],
   imports: [
     CommonModule,
     BlogRoutingModule,
-    CardModule
+    CardModule,
+    ImageModule
   ],
   exports: [
     BlogCardComponent,

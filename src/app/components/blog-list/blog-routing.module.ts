@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BlogListComponent } from './blog-list.component';
+import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
   {
     path: '',
     children: [{ path: 'blogs', component: BlogListComponent }],
   },
-  //   {
-  //     path:'blogs/:blog_id', component: BlogPostDetailComponent, pathMatch: 'full'
-  //   },
+  {
+    path:'blogs/:blog_id', component: BlogComponent, pathMatch: 'full'
+  },
   //   {
   //     path: 'users/:user_id/blogs', component: BlogPostSpecificComponent, pathMatch: 'full'
   //   },

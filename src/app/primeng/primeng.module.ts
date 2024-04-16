@@ -13,6 +13,7 @@ import {ToastModule} from 'primeng/toast';
 import {InputTextModule} from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { SharedModule } from 'primeng/api';
+import { ImageModule } from 'primeng/image';
 
 
 const importedPrimeNgModules = [
@@ -26,7 +27,8 @@ const importedPrimeNgModules = [
     ToastModule,
     InputTextModule,
     PasswordModule,
-    SharedModule
+    SharedModule,
+    ImageModule
 ];
 
 @NgModule({
