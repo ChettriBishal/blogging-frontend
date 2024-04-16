@@ -30,22 +30,22 @@ export class NavbarComponent {
   ngOnInit() {
     this.isLoggedIn$.subscribe((isLoggedIn) => {
       this.isLoggedIn = isLoggedIn;
-      this.items = this.createMenuItems();
+      this.createMenuItems();
     });
 
-    this.items = [
-      // {
-      //   label: 'Blogger',
-      // },
-    ];
+    this.items = [];
   }
 
-  createMenuItems(): MenuItem[] {
-    const postButton: MenuItem = {
-      label: 'Post',
-      routerLink: '/post', 
-    };
-
-    return this.isLoggedIn ? [postButton] : []; 
+  
+  createMenuItems(): void {
+    this.isLoggedIn$.subscribe((isLoggedIn) => {
+      this.items = [];
+      if (isLoggedIn) {
+        this.items.push({
+          label: 'Post',
+          routerLink: 'new-blog',
+        });
+      }
+    });
   }
 }

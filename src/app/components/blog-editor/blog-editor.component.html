@@ -1,0 +1,84 @@
+<!-- <p-progressBar mode="indeterminate" *ngIf="loading"></p-progressBar> -->
+
+<div class="blog-editor-container">
+  <h1 class="mt-2 display-4">{{ formTitle }}</h1>
+  <hr />
+  <p-card class="my-3">
+    <form
+      #myForm="ngForm"
+      (ngSubmit)="myForm.form.valid && saveBlogPost(myForm)"
+      accept-charset="UTF-8"
+      novalidate
+    >
+      <div class="p-fluid">
+        <div class="p-field">
+          <label for="postTitle">Title</label>
+          <input
+            type="text"
+            id="postTitle"
+            pInputText
+            placeholder="Add title..."
+            name="postTitle"
+            [(ngModel)]="postData.title"
+            #postTitle="ngModel"
+            required
+          />
+          <div
+            *ngIf="myForm.submitted && postTitle.invalid"
+            class="text-danger"
+          >
+            Title is required
+          </div>
+          <div class = "p-field">
+            <label for="tag">Tag</label>
+            <input type="text" id="tag" name="tag" pInputText [(ngModel)]="postData.tagname" #tag= "ngModel" required>
+            <div
+            *ngIf="myForm.submitted && tag.invalid"
+            class="text-danger"
+            >Tag is required
+            </div>
+          </div>
+        </div>
+
+        
+
+        
+
+        <div class="p-field">
+            <!-- <label for="postContent">Content</label> -->
+            <textarea
+                id="postContent"
+                pInputTextarea
+                placeholder="Add content..."
+                name="postContent"
+                [(ngModel)]="postData.content"
+                #postContent="ngModel"
+                rows="10"
+                cols="50"
+                required
+            ></textarea>
+            <div *ngIf="myForm.submitted && postContent.invalid" class="text-danger">
+                Content is required
+            </div>
+                </div>
+        
+        </div>
+      <div class="py-3" align="end">
+        <button
+          type="submit"
+          pButton
+          label="Save"
+          class="p-button-primary"
+          [disabled]="!myForm.form.valid"
+        ></button>
+        <button
+          type="button"
+          pButton
+          label="Cancel"
+          class="p-button-secondary"
+          (click)="navigateToHome()"
+        ></button>
+      </div>
+    </form>
+  </p-card>
+</div>

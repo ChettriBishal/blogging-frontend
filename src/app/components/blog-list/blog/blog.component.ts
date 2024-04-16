@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BlogPost } from '../../../models/blog.model';
 import { ActivatedRoute } from '@angular/router';
-import { BlogPostService } from '../../../services/blog/blog.service';
+import { BlogService } from '../../../services/blog/blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -13,7 +13,7 @@ export class BlogComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private blogService: BlogPostService
+    private blogService: BlogService
   ) {}
 
   ngOnInit() {

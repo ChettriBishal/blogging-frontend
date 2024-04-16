@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BlogPost } from '../../models/blog.model';
-import { BlogPostService } from '../../services/blog/blog.service';
+import { BlogService } from '../../services/blog/blog.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class BlogListComponent {
   cardWidth: number;
 
   constructor(
-    private blogPostService: BlogPostService,
+    private blogPostService: BlogService,
     private router: Router
   ) {}
 

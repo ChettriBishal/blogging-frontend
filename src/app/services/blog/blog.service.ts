@@ -8,11 +8,10 @@ import { NewBlog } from '../../models/new-blog.model';
 @Injectable({
   providedIn: 'root',
 })
-export class BlogPostService {
+export class BlogService {
   private apiUrl = 'http://localhost:5000';
 
   constructor(private http: HttpClient) {}
-
 
   getBlogPosts(): Observable<BlogPost[]> {
     return this.http.get<BlogPost[]>(`${this.apiUrl}/blogs`);
@@ -39,15 +38,24 @@ export class BlogPostService {
     return this.http.get<BlogPost[]>(url);
   }
 
+  createBlog(blog: NewBlog): Observable<any> {
+    // const headers = new HttpHeaders().set(
+    //   'Authorization',
+    //   `Bearer ${sessionStorage.getItem('access_token')}`
+    // );
 
-  createBlog(blog: NewBlog) {
-    const headers = new HttpHeaders().set(
-      'Authorization',
-      `Bearer ${sessionStorage.getItem('access_token')}`
-    );
+    const bearerToken = sessionStorage.getItem('access_token'); 
 
-    return this.http.post<BlogPost>(`${this.apiUrl}/users/${blog.creator_id}/blogs`, blog, {
-      headers,
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${bearerToken}`,
     });
+
+    return this.http.post<any>(
+      `${this.apiUrl}/users/${blog.creator_id}/blogs`,
+      blog,
+      {
+        headers,
+      }
+    );
   }
 }
