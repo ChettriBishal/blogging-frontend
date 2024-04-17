@@ -6,6 +6,7 @@ import { BlogRoutingModule } from './blog-routing.module';
 import { CardModule } from 'primeng/card';
 import { ImageModule } from 'primeng/image';
 import { BlogComponent } from './blog/blog.component';
+import { CommentsComponent } from './blog/comments/comments.component';
 
 
 
@@ -15,6 +16,7 @@ import { BlogComponent } from './blog/blog.component';
     BlogCardComponent,
     BlogListComponent,
     BlogComponent,
+    CommentsComponent,
   ],
   imports: [
     CommonModule,
