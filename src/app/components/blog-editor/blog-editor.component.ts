@@ -15,7 +15,7 @@ export class BlogEditorComponent {
   blogService = inject(BlogService);
   router = inject(Router);
 
-  formTitle = 'New';
+  formTitle = 'New Blog';
   postData: NewBlog = {
     title: '',
     content: '',

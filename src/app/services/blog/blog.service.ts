@@ -39,11 +39,6 @@ export class BlogService {
   }
 
   createBlog(blog: NewBlog): Observable<any> {
-    // const headers = new HttpHeaders().set(
-    //   'Authorization',
-    //   `Bearer ${sessionStorage.getItem('access_token')}`
-    // );
-
     const bearerToken = sessionStorage.getItem('access_token'); 
 
     const headers = new HttpHeaders({

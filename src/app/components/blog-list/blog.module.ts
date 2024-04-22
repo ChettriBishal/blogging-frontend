@@ -7,6 +7,8 @@ import { CardModule } from 'primeng/card';
 import { ImageModule } from 'primeng/image';
 import { BlogComponent } from './blog/blog.component';
 import { CommentsComponent } from './blog/comments/comments.component';
+import { FormsModule } from '@angular/forms';
+import { AddCommentComponent } from './blog/add-comment/add-comment.component';
 
 
 
@@ -17,12 +19,14 @@ import { CommentsComponent } from './blog/comments/comments.component';
     BlogListComponent,
     BlogComponent,
     CommentsComponent,
+    AddCommentComponent,
   ],
   imports: [
     CommonModule,
     BlogRoutingModule,
     CardModule,
-    ImageModule
+    ImageModule,
+    FormsModule
   ],
   exports: [
     BlogCardComponent,
