@@ -7,7 +7,6 @@ import { MessageService } from 'primeng/api';
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
-  providers: [MessageService]
 })
 export class SignupComponent {
   username: string;
@@ -16,44 +15,44 @@ export class SignupComponent {
   isValidEmail: boolean = true;
 
   constructor(
-    private authService: AuthService, 
-    private router: Router, 
+    private authService: AuthService,
+    private router: Router,
     private messageService: MessageService
-  ){}
+  ) {}
 
+  navigateToSignIn() {
+    this.router.navigate(['/signin']);
+  }
 
-  signup(){
+  signup() {
     console.log('inside signup');
     console.log(this.username);
-    this.authService.signUp(this.username, this.password, this.email).subscribe({
-      next: () => {
+    this.authService
+      .signUp(this.username, this.password, this.email)
+      .subscribe({
+        next: () => {
           this.router.navigate(['/login']); // direct user to login page
           this.showSuccessToast();
-      },
-      error: () => {
+        },
+        error: () => {
           this.showErrorToast('Something went wrong');
-      }
-    });
+        },
+      });
   }
 
   showSuccessToast() {
-     this.messageService.add(
-      {
-        severity:'success', 
-        summary: 'Success!',
-        detail: 'You have successfully signed up!'
-      }
-    );
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Success!',
+      detail: 'You have successfully signed up!',
+    });
   }
 
   showErrorToast(errorMessage: string) {
-    this.messageService.add(
-      {
-        severity:'error', 
-        summary: 'Error!', 
-        detail: errorMessage
-      }
-    );
+    this.messageService.add({
+      severity: 'error',
+      summary: 'Error!',
+      detail: errorMessage,
+    });
   }
-
 }

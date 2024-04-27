@@ -18,6 +18,10 @@ export class SigninComponent {
     private messageService: MessageService
   ) {}
 
+  navigateToSignUp() {
+    this.router.navigate(['/signup']);
+  }
+
   login() {
     this.authService.login(this.username, this.password).subscribe(
       (response) => {
@@ -34,7 +38,7 @@ export class SigninComponent {
 
         // this.authService.setLoggedIn(true);
         // this.authService.setUserName(this.username);
-        this.router.navigate(['']);
+        this.router.navigate(['/blogs']);
       },
       (error) => {
         console.log(error.status);

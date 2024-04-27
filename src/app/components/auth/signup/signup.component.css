@@ -1,0 +1,97 @@
+
+.loginContainer{
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+    background-color: #F7F7F7;
+}
+
+.left, .right{
+	width: 50vw;
+}
+
+.left{
+	/* background-color: red;/ */
+	background-image: url("https://images.unsplash.com/photo-1714066961894-c2b6b161cfb4?q=80&w=3135&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-size: cover;
+}
+
+/* input[type="text"] {
+    height: 30px;
+} */
+
+#username{
+    height: 40px;
+}
+
+#email {
+    height: 38px;
+
+}
+
+.black{
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0, 0, 0, 0.3);
+}
+
+
+.right{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card{
+	box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
+	width: 25vw;
+	height: 85vh;
+	padding: 20px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+}
+
+.heading{
+	font-weight: 600;
+	font-size: 30px;
+}
+
+
+.logo{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.logo img{
+	width: 300px;
+}
+
+.buttons{
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	/* gap: 20px; */
+	width: 100%;
+    cursor: pointer;
+}
+
+.button{
+	padding: 10px 20px ;
+	margin: 10px 10px;
+	border: 2px solid #5941f9;
+	border-radius: 10px;
+	width: 100%;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+.signupButton{
+	background-color: #5941f9;
+	color: #fff;
+	display: flex;
+}
