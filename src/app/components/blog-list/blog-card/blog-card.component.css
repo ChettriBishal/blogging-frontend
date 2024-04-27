@@ -1,12 +1,64 @@
-.blog-card {
-  width: 300px;
-  margin-bottom: 20px;
+.card {
+  box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
+  width: 25vw;
+  border-radius: 20px;
+  /* display: flex;
+	align-items: center;
+	flex-direction: column; */
+  position: relative;
+  margin: 10px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.p-card-header {
-  font-weight: bold;
+.cardImage {
+  width: 100%;
+  height: 50%;
+  position: relative;
 }
 
-.author, .date {
+.purpleScreen {
+  position: absolute;
+  width: 100%;
+  height: 253px;
+  background-color: rgb(89, 65, 249, 0.3);
+  top: 0;
+}
+
+.cardImage img {
+  height: 253px;
+  width: 100%;
+  /* margin-left: -20px;
+	margin-top: -20px; */
+}
+.cardContent {
+  padding: 20px;
+}
+
+.cardHeading {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.cardSubHeading {
+  font-weight: 300;
+  font-size: 15px;
   font-style: italic;
+}
+
+.actualContent {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.button {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 10px 10px;
+  border: 2px solid #5941f9;
+  border-radius: 10px;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }

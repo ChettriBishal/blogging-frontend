@@ -9,6 +9,7 @@ import { BlogComponent } from './blog/blog.component';
 import { CommentsComponent } from './blog/comments/comments.component';
 import { FormsModule } from '@angular/forms';
 import { AddCommentComponent } from './blog/add-comment/add-comment.component';
+import { NavComponent } from '../nav/nav.component';
 
 
 
@@ -20,6 +21,7 @@ import { AddCommentComponent } from './blog/add-comment/add-comment.component';
     BlogComponent,
     CommentsComponent,
     AddCommentComponent,
+    NavComponent
   ],
   imports: [
     CommonModule,

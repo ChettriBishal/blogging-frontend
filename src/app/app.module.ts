@@ -18,6 +18,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { BlogEditorModule } from './components/blog-editor/blog-editor.module';
 import { CommentsModule } from './components/blog-list/blog/comments/comments.module';
 import { FooterComponent } from './components/footer/footer.component';
+import { ExcerptPipe } from './pipes/excerpt.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FooterComponent } from './components/footer/footer.component';
     PostCommentComponent,
     BlogEditorComponent,
     FooterComponent,
+    ExcerptPipe,
   ],
   imports: [
     BrowserModule,
@@ -39,9 +41,9 @@ import { FooterComponent } from './components/footer/footer.component';
     AuthModule,
     BlogModule,
     BlogEditorModule,
-    CommentsModule
+    CommentsModule,
   ],
   providers: [MessageService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
