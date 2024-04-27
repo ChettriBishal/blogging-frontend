@@ -15,9 +15,10 @@ export class CommentService {
   }
 
   addCommentForBlog(blogId: number, comment: string): Observable<any> {
-    console.log('inside add comment');
+    console.log('add comment');
 
     const bearerToken = sessionStorage.getItem('access_token');
+
     const headers = new HttpHeaders({
       Authorization: `Bearer ${bearerToken}`,
     });
@@ -26,6 +27,7 @@ export class CommentService {
     };
     const link = `${this.apiUrl}/blogs/${blogId}/comments`;
     console.log(link);
+
     return this.http.post<any>(
       `${this.apiUrl}/blogs/${blogId}/comments`,
       jsonData,

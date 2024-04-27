@@ -33,13 +33,23 @@ export class NavbarComponent {
       this.createMenuItems();
     });
 
-    this.items = [];
+    this.items = [
+      {
+        label: 'Home'
+      },
+      {
+        label: 'About'
+      },
+      {
+        label: 'Contact'
+      },
+    ];
   }
 
   
   createMenuItems(): void {
     this.isLoggedIn$.subscribe((isLoggedIn) => {
-      this.items = [];
+      // this.items = [];
       if (isLoggedIn) {
         this.items.push({
           label: 'Post',

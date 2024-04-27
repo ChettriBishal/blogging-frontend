@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { BlogPost } from '../../models/blog.model';
 import { BlogService } from '../../services/blog/blog.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-blog-list',
@@ -14,7 +15,9 @@ export class BlogListComponent {
 
   constructor(
     private blogPostService: BlogService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private auth: AuthService
   ) {}
 
   ngOnInit() {

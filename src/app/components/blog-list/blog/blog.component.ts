@@ -34,6 +34,5 @@ export class BlogComponent {
   onAddComment(comment: string) {
     console.log('inside add comment in blog componnent');
     this.commentService.addCommentForBlog(this.blogId, comment);
-    console.log("New comment ", comment);
   }
 }

@@ -53,4 +53,20 @@ export class BlogService {
       }
     );
   }
+
+  deleteBlog(blogId: number): Observable<any> {
+    const bearerToken = sessionStorage.getItem('access_token'); 
+
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${bearerToken}`,
+    });
+
+    return this.http.delete<any>(
+      `${this.apiUrl}/blogs/${blogId}/blogs`,
+      {
+        headers,
+      }
+    );
+  }
+
 }

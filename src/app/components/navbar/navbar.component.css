@@ -1,0 +1,29 @@
+.nav-blog {
+  background-color: aliceblue;
+  border-radius: 50%;
+  box-sizing: border-box;
+  width: 100%;
+}
+#login-button {
+  background-color: aliceblue;
+  color: black;
+  padding: 10px; 
+
+  border: none;
+  /* color: white; */
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-color: gray;
+  /* width: 20px; */
+}
+
+#blogger-title {
+  font-size: 21px;
+  font-weight: bolder;
+}

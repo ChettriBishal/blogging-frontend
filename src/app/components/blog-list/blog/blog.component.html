@@ -14,5 +14,5 @@
     <div [innerHTML]="selectedBlog?.content"></div>
   </div>
 </div>
-<app-add-comment></app-add-comment>
+<app-add-comment (addComment)="onAddComment($event)"></app-add-comment>
 <app-comments></app-comments>

@@ -11,9 +11,9 @@ const routes: Routes = [
   {
     path:'blogs/:blog_id', component: BlogComponent, pathMatch: 'full'
   },
-  //   {
-  //     path: 'users/:user_id/blogs', component: BlogPostSpecificComponent, pathMatch: 'full'
-  //   },
+    // {
+    //   path: 'users/:user_id/blogs', component: BlogListComponent, pathMatch: 'full'
+    // },
   //   {
   //     path: 'add-blog', component: NewBlogComponent, pathMatch: 'full'
   //   }

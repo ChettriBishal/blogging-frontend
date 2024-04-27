@@ -1,20 +1,17 @@
 
-<!-- Navabar for the App -->
-
-<!-- Navabar for the App -->
-<p-menubar [model]="items">
+<p-menubar [model]="items" class="nav-blog">
   <ng-template pTemplate="start">
-    <p>Blogger</p>
-    <!-- <img src="../../../assets/icon.jpg" height="40" /> -->
+    <p id="blogger-title">Blogger</p>
   </ng-template>
   <ng-template pTemplate="end">
     <div *ngIf="!isLoggedIn; else logoutButton">
       <button
         pButton
         pRipple
-        label="Login/SignUp"
+        label="Login"
         class="p-button-success"
         (click)="redirectToLogin()"
+        id="login-button"
       ></button>
     </div>
     <ng-template #logoutButton>

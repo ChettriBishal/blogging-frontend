@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 
 import { PrimeNgModule } from './primeng/primeng.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { BlogEditorComponent } from './components/blog-editor/blog-editor.compon
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { BlogEditorModule } from './components/blog-editor/blog-editor.module';
 import { CommentsModule } from './components/blog-list/blog/comments/comments.module';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { CommentsModule } from './components/blog-list/blog/comments/comments.mo
     LoginComponent,
     SignupComponent,
     BlogEditorComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { CommentsModule } from './components/blog-list/blog/comments/comments.mo
     BlogEditorModule,
     CommentsModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,47 @@
+<div class="loginContainer">
+  <div class="left">
+    <div class="black"></div>
+  </div>
+
+  <div class="right">
+    <div class="card">
+      <div class="logo">
+        <img src="../../../../assets/removed.jpg" />
+      </div>
+      <div class="heading">Sign In</div><br/> 
+
+      <div>
+        <div class="p-field">
+          <label for="username">Username</label>
+          <span class="p-float-label">
+            <input
+              pInputText
+              type="text"
+              id="username"
+              name="username"
+              [(ngModel)]="username"
+              required
+            />
+          </span>
+        </div><br/>
+        <div class="p-field">
+          <label for="password">Password</label>
+          <span class="p-float-label">
+            <p-password
+              type="password"
+              id="password"
+              name="password"
+              [(ngModel)]="password"
+              required
+            ></p-password>
+          </span>
+        </div>
+      </div>
+      <br/> <br/>
+      <div class="buttons">
+        <div class="button loginButton" (click)="login()">Login</div>
+        <div class="button signupButton" routerLink="/signup">Sign Up</div>
+      </div>
+    </div>
+  </div>
+</div>
