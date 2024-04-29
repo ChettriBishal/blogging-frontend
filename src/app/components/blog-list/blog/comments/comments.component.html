@@ -1,6 +1,20 @@
-<p *ngIf="comments.length > 0"><strong>Comments</strong></p>
-<div *ngFor="let comment of comments" class="comment">
-  <div class="author">{{ comment.creator_id}}</div>
-  <div class="date">{{ comment.creation_date}}</div>
-  <div class="content">{{ comment.content}}</div>
+<!-- new comments info page -->
+<div class="comments">
+  <div class="mainCommentsHeading">Comments</div>
+  <div class="commentsCard">
+    <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+
+    <div class="submitButton">Submit</div>
+  </div>
+  <div class="commentsCard" *ngFor="let comment of comments">
+    <div class="commentContent">
+      {{ comment.content }}
+    </div>
+    <div class="line"></div>
+
+    <div class="timeAndUser">
+      <div class="time">{{ comment.creation_date.substring(0, 10) }}</div>
+      <div class="user">User {{ comment.creator_id }}</div>
+    </div>
+  </div>
 </div>

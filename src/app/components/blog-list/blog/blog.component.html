@@ -1,18 +1,42 @@
-
-
-<div class="blog-detail-container" *ngIf="selectedBlog">
+<!-- <div class="blog-detail-container" *ngIf="selectedBlog">
   <div class="blog-detail-header">
     <h1 class="blog-detail-title">{{ selectedBlog.title }}</h1>
-    <p class="blog-detail-author">By {{ selectedBlog.creator_id}}</p>
+    <p class="blog-detail-author">By {{ selectedBlog.creator_id }}</p>
   </div>
 
   <div class="blog-detail-image">
-    <p-image [src]="'https://apollo.primeng.org/assets/demo/images/blog/blogdetail.png'" alt="{{ selectedBlog?.title }}" width="100%"></p-image>
+    <p-image
+      [src]="
+        'https://apollo.primeng.org/assets/demo/images/blog/blogdetail.png'
+      "
+      alt="{{ selectedBlog?.title }}"
+      width="100%"
+    ></p-image>
   </div>
 
   <div class="blog-detail-content">
     <div [innerHTML]="selectedBlog?.content"></div>
   </div>
-</div>
-<app-add-comment (addComment)="onAddComment($event)"></app-add-comment>
+</div> -->
+<!-- <app-add-comment (addComment)="onAddComment($event)"></app-add-comment>
+<app-comments></app-comments> -->
+
+<!-- new blog style -->
+
+<div class="container" *ngIf="selectedBlog">
+  <div class="backgroundImage">
+    <img
+      src="https://images.unsplash.com/photo-1713781654565-ae4aef23f75b?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt=""
+    />
+    <div class="purpleScreen">
+      <div class="mainBlogHeading">{{ selectedBlog.title }}</div>
+      <div class="subBlogHeading">by {{ selectedBlog.creator_id }}</div>
+    </div>
+  </div>
+
+  <div class="blogContents">
+    {{ selectedBlog.content }}
+  </div>
+</div><br/><br/>
 <app-comments></app-comments>
