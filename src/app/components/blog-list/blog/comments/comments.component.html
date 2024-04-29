@@ -2,9 +2,9 @@
 <div class="comments">
   <div class="mainCommentsHeading">Comments</div>
   <div class="commentsCard">
-    <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+    <textarea [(ngModel)]="comment" name=""  (ngModelChange)="onTextAreaChange()" id="textarea" cols="30" rows="10"></textarea>
 
-    <div class="submitButton">Submit</div>
+    <button class="submitButton" (click)="saveComment()">Submit</button>
   </div>
   <div class="commentsCard" *ngFor="let comment of comments">
     <div class="commentContent">

@@ -19,6 +19,8 @@ export class CommentService {
 
     const bearerToken = sessionStorage.getItem('access_token');
 
+    console.log(bearerToken);
+
     const headers = new HttpHeaders({
       Authorization: `Bearer ${bearerToken}`,
     });

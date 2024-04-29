@@ -1,26 +1,3 @@
-
-.comment {
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-.comment .author {
-  font-weight: bold;
-}
-
-.comment .date {
-  font-style: italic;
-}
-
-.comment .content {
-  margin-top: 5px;
-}
-
-
-
 /* New comment style*/
 .comments{
 	margin-bottom: 100px;
@@ -58,6 +35,7 @@
 
 
 .submitButton{
+	cursor: pointer;
 	margin: 10px 10px;
 	/* margin-left: auto; */
 	padding: 10px 20px ;
