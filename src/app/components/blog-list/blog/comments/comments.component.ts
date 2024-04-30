@@ -54,7 +54,7 @@ export class CommentsComponent {
       .addCommentForBlog(this.blogId, this.comment)
       .subscribe(() => {
         this.fetchComments();
-        this.router.navigate(['/blogs', this.blogId]);
+        // this.router.navigate(['/blogs', this.blogId]);
       });
     this.messageService.add({
       severity: 'success',

@@ -1,7 +1,6 @@
 <!-- <p-progressBar mode="indeterminate" *ngIf="loading"></p-progressBar> -->
-
+<!-- <app-nav></app-nav> -->
 <div class="blog-editor-container">
-  <h1 class="mt-2 display-4">{{ formTitle }}</h1>
   <hr />
   <p-card class="my-3">
     <form
@@ -10,6 +9,25 @@
       accept-charset="UTF-8"
       novalidate
     >
+    <div class="postTop">
+      <img src="../../../assets/newPost3.png" id="postIcon">
+      <div class="py-3" align="right">
+        <button
+          type="submit"
+          pButton
+          label="Publish"
+          class="p-button-primary"
+          [disabled]="!myForm.form.valid"
+        ></button>
+        <button
+          type="button"
+          pButton
+          label="Cancel"
+          class="p-button-secondary"
+          (click)="navigateToHome()"
+        ></button>
+      </div>
+    </div>
       <div class="p-fluid">
         <div class="p-field">
           <label for="postTitle">Title</label>
@@ -29,45 +47,50 @@
           >
             Title is required
           </div>
-          <div class = "p-field">
+          <div class="p-field">
             <label for="tag">Tag</label>
-            <input type="text" id="tag" name="tag" pInputText [(ngModel)]="postData.tagname" #tag= "ngModel" required>
-            <div
-            *ngIf="myForm.submitted && tag.invalid"
-            class="text-danger"
-            >Tag is required
+            <input
+              type="text"
+              id="tag"
+              name="tag"
+              pInputText
+              placeholder="Enter a specific tag for the blog"
+              [(ngModel)]="postData.tagname"
+              #tag="ngModel"
+              required
+            />
+            <div *ngIf="myForm.submitted && tag.invalid" class="text-danger">
+              Tag is required
             </div>
           </div>
         </div>
 
-        
-
-        
-
         <div class="p-field">
-            <!-- <label for="postContent">Content</label> -->
-            <textarea
-                id="postContent"
-                pInputTextarea
-                placeholder="Add content..."
-                name="postContent"
-                [(ngModel)]="postData.content"
-                #postContent="ngModel"
-                rows="10"
-                cols="50"
-                required
-            ></textarea>
-            <div *ngIf="myForm.submitted && postContent.invalid" class="text-danger">
-                Content is required
-            </div>
-                </div>
-        
+          <!-- <label for="postContent">Content</label> -->
+          <textarea
+            id="postContent"
+            pInputTextarea
+            placeholder="Add content for the blog post..."
+            name="postContent"
+            [(ngModel)]="postData.content"
+            #postContent="ngModel"
+            rows="10"
+            cols="50"
+            required
+          ></textarea>
+          <div
+            *ngIf="myForm.submitted && postContent.invalid"
+            class="text-danger"
+          >
+            Content is required
+          </div>
         </div>
-      <div class="py-3" align="end">
+      </div>
+      <!-- <div class="py-3" align="left">
         <button
           type="submit"
           pButton
-          label="Save"
+          label="Publish"
           class="p-button-primary"
           [disabled]="!myForm.form.valid"
         ></button>
@@ -78,7 +101,7 @@
           class="p-button-secondary"
           (click)="navigateToHome()"
         ></button>
-      </div>
+      </div> -->
     </form>
   </p-card>
 </div>

@@ -12,6 +12,7 @@ import { AuthService } from '../../services/auth/auth.service';
 export class BlogListComponent {
   blogs: BlogPost[];
   cardWidth: number;
+  username: string;
 
   constructor(
     private blogPostService: BlogService,
@@ -36,5 +37,11 @@ export class BlogListComponent {
   openBlogDetail(blog: BlogPost) {
     console.log('blog details here');
     this.router.navigate(['/blogs/', blog.blog_id]);
+  }
+
+  setUserName(userId: number){
+    this.auth.getUserName(userId).subscribe((username: string) =>{
+      this.username = username;
+    });
   }
 }

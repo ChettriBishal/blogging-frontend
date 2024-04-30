@@ -19,6 +19,12 @@ export class AuthService {
 
   isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+  checkIfLoggedIn(): void {
+    if(sessionStorage.getItem('access_token')){
+      this.isLoggedIn$.next(true);
+    }
+  }
+
   login(username: string, password: string): Observable<any> {
     return this.http.post<LoginErrorResponse | LoginSuccessReponse>(
       `${this.apiUrl}/login`,
@@ -48,4 +54,13 @@ export class AuthService {
     }
     return 0;
   }
+
+
+  /* Username related queries*/
+  getUserName(userId): Observable<string> {
+    return this.http.get<string>(`${this.apiUrl}/username`, {params: userId});
+  }
+
 }
+
+

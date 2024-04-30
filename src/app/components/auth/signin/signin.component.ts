@@ -18,6 +18,7 @@ export class SigninComponent {
     private messageService: MessageService
   ) {}
 
+
   navigateToSignUp() {
     this.router.navigate(['/signup']);
   }
@@ -37,7 +38,6 @@ export class SigninComponent {
         });
 
         // this.authService.setLoggedIn(true);
-        // this.authService.setUserName(this.username);
         this.router.navigate(['/blogs']);
       },
       (error) => {

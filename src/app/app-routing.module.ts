@@ -11,7 +11,13 @@ const routes: Routes = [
         (m) => m.AuthRoutingModule
       ),
   },
-  { path: 'new-blog', component: BlogEditorComponent, pathMatch: 'full' },
+  {
+    path: '',
+    loadChildren: () => 
+      import('./components/blog-list/blog-routing.module').then(
+        (m) => m.BlogRoutingModule
+      )
+  }
 ];
 
 @NgModule({

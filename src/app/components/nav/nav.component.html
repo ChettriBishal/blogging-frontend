@@ -1,10 +1,11 @@
-<div class="navbarContainer">
+<div class="navbarContainer" *ngIf="isLoggedIn">
   <div class="navList">
-    <img src="./../../../assets/removed.jpg" alt="" id="blogIcon">
-    <div>Home</div>
-    <div>About</div>
-    <div>Contact</div>
+    <img src="./../../../assets/removed.jpg" alt="" id="blogIcon" (click)="navigateToHome()" class="clickable">
+    <div (click)="navigateToHome()" class="clickable">Home</div>
+    <div class="clickable">About</div>
+    <div class="clickable">Contact</div>
+    <div class="clickable" (click)="navigateToNewPost()">New Post</div>
 
-    <div class="navButton">Logout</div>
+    <div class="navButton" (click)="logout()">Logout</div>
   </div>
 </div>

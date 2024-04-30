@@ -12,10 +12,10 @@ export class AppComponent {
   
   constructor(private authService: AuthService){}
   
-  ngOnChanges() {
-
+  ngOnInit() {
+    this.authService.checkIfLoggedIn();
     this.isLoggedIn = this.authService.isLoggedIn$.value;
-    console.log(this.isLoggedIn);
+    console.log('is loggedin ' + this.isLoggedIn);
   }
 
 }

@@ -36,3 +36,7 @@
 	background-color: #5941f9;
 	color: #fff;
 }
+
+.clickable {
+	cursor: pointer;
+}

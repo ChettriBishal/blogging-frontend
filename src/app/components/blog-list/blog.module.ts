@@ -32,7 +32,8 @@ import { NavComponent } from '../nav/nav.component';
   ],
   exports: [
     BlogCardComponent,
-    BlogListComponent
+    BlogListComponent,
+    NavComponent
   ]
 })
 export class BlogModule{ }

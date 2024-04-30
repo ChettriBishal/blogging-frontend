@@ -25,14 +25,12 @@ export class SignupComponent {
   }
 
   signup() {
-    console.log('inside signup');
-    console.log(this.username);
     this.authService
       .signUp(this.username, this.password, this.email)
       .subscribe({
         next: () => {
-          this.router.navigate(['/login']); // direct user to login page
           this.showSuccessToast();
+          this.router.navigate(['/login']); // direct user to login page
         },
         error: () => {
           this.showErrorToast('Something went wrong');
