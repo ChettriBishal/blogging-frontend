@@ -17,7 +17,6 @@ import { BlogEditorComponent } from './components/blog-editor/blog-editor.compon
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { BlogEditorModule } from './components/blog-editor/blog-editor.module';
 import { CommentsModule } from './components/blog-list/blog/comments/comments.module';
-import { FooterComponent } from './components/footer/footer.component';
 import { ExcerptPipe } from './pipes/excerpt.pipe';
 
 @NgModule({
@@ -27,7 +26,6 @@ import { ExcerptPipe } from './pipes/excerpt.pipe';
     NavbarComponent,
     PostCommentComponent,
     BlogEditorComponent,
-    FooterComponent,
     ExcerptPipe,
   ],
   imports: [

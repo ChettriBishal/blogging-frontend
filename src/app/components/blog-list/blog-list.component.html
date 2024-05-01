@@ -4,6 +4,7 @@
   <app-blog-card
     *ngFor="let blog of blogs"
     (click)="openBlogDetail(blog)"
+    [blogTitle]="blog.title"
     [blogAuthor]="blog.creator_id.toString()"
     [blogContent]="blog.content.substr(0,30)+ '[...]'"
     [blogId]="blog.blog_id"

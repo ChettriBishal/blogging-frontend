@@ -10,7 +10,7 @@ import { CommentsComponent } from './blog/comments/comments.component';
 import { FormsModule } from '@angular/forms';
 import { AddCommentComponent } from './blog/add-comment/add-comment.component';
 import { NavComponent } from '../nav/nav.component';
-
+import { BlogOprComponent } from './blog/blog-opr/blog-opr.component';
 
 
 
@@ -21,7 +21,8 @@ import { NavComponent } from '../nav/nav.component';
     BlogComponent,
     CommentsComponent,
     AddCommentComponent,
-    NavComponent
+    NavComponent,
+    BlogOprComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +34,7 @@ import { NavComponent } from '../nav/nav.component';
   exports: [
     BlogCardComponent,
     BlogListComponent,
+    BlogOprComponent,
     NavComponent
   ]
 })

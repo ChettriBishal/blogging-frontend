@@ -55,6 +55,7 @@ export class BlogService {
   }
 
   deleteBlog(blogId: number): Observable<any> {
+    console.log('inside delete blog in service');
     const bearerToken = sessionStorage.getItem('access_token'); 
 
     const headers = new HttpHeaders({
@@ -62,7 +63,7 @@ export class BlogService {
     });
 
     return this.http.delete<any>(
-      `${this.apiUrl}/blogs/${blogId}/blogs`,
+      `${this.apiUrl}/blogs/${blogId}`,
       {
         headers,
       }
